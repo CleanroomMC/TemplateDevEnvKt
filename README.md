@@ -1,6 +1,6 @@
-## TemplateDevEnv
+## TemplateDevEnv for Kotlin
 
-Template workspace for modding Minecraft 1.12.2. Licensed under MIT, it is made for public use.
+Template workspace for modding Minecraft 1.12.2 in Kotlin. Licensed under MIT, it is made for public use.
 
 This template currently utilizies **Gradle 8.1.1** + **[RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) 1.3.27** + **Forge 14.23.5.2847**.
 

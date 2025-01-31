@@ -23,7 +23,8 @@ plugins {
 dependencyResolutionManagement { 
     versionCatalogs { 
         create("libs") {
-            version("kotlinVersion", "1.9.23")
+            version("kotlinVersion", settings.extra.properties["kotlin_version"].toString())
+            version("forgelinContinuousVersion", settings.extra.properties["forgelin_continuous_version"].toString())
         }
     }
 }

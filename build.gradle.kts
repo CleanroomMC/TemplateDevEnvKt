@@ -9,7 +9,7 @@ buildscript {
     }
     
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.23")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${libs.versions.kotlinVersion}")
     }
 }
 
@@ -50,7 +50,7 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(8))
         // Azul covers the most platforms for Java 8 toolchains, crucially including MacOS arm64
-        vendor.set(org.gradle.jvm.toolchain.JvmVendorSpec.AZUL)
+        vendor.set(JvmVendorSpec.AZUL)
     }
     // Generate sources and javadocs jars when building and publishing
     withSourcesJar()
@@ -129,7 +129,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.chaosunity.forgelin:Forgelin-Continuous:1.9.23.0") {
+    implementation("io.github.chaosunity.forgelin:Forgelin-Continuous::${libs.versions.forgelinContinuousVersion}") {
         exclude("net.minecraftforge")
     }
     

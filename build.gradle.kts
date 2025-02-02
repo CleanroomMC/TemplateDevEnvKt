@@ -29,7 +29,12 @@ val mod_version: String by project
 @Suppress("PropertyName")
 val maven_group: String by project
 @Suppress("PropertyName")
+val mod_id: String by project
+@Suppress("PropertyName")
 val archives_base_name: String by project
+
+@Suppress("PropertyName")
+val forgelin_continuous_version: String by project
 
 @Suppress("PropertyName")
 val use_access_transformer: String by project
@@ -99,8 +104,9 @@ minecraft {
     // Add any properties you want to swap out for a dynamic value at build time here
     // Any properties here will be added to a class at build time, the name can be configured below
     // Example:
-    // injectedTags.put("VERSION", project.version)
-    // injectedTags.put("MOD_ID", project.archives_base_name)
+    injectedTags.put("VERSION", project.version)
+    injectedTags.put("MOD_ID", mod_id)
+    injectedTags.put("MOD_NAME", archives_base_name)
 }
 
 // Generate a group.archives_base_name.Tags class
@@ -129,7 +135,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.chaosunity.forgelin:Forgelin-Continuous::${libs.versions.forgelinContinuousVersion}") {
+    implementation("io.github.chaosunity.forgelin:Forgelin-Continuous:${forgelin_continuous_version}") {
         exclude("net.minecraftforge")
     }
     
